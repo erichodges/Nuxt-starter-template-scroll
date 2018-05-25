@@ -18,13 +18,15 @@ module.exports = {
     
   },
 
-  css: [
-    '@assets/scss/main.scss'
-  ],
-
+  // css: [
+  //   '@assets/scss/main.scss'
+  // ],
+  
   modules: [
+    ['nuxt-sass-resources-loader', './assets/scss/main.scss'],
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    
   ],
 
   plugins: [ 

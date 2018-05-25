@@ -1,3 +1,22 @@
 @import "base";
 @import "header";
 @import "index-vue";
+
+// Begin Bulma import
+// Customize Bulma between the @import lines
+@import "~bulma/sass/utilities/_all.sass";
+
+  // $primary: red;
+  // $info: orange;
+  // $success: green;
+  // $warning: blue;
+  // $danger: indigo;
+  // $light: lightgrey;
+  // $dark: darkgrey;
+
+@import "~bulma/bulma";
+
+/////////////////
+// end bulma import
+
+

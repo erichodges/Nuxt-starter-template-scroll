@@ -23,7 +23,15 @@ module.exports = {
   // ],
   
   modules: [
-    ['nuxt-sass-resources-loader', './assets/scss/main.scss'],
+    // ['nuxt-sass-resources-loader', './assets/scss/main.scss'],
+
+    ['nuxt-sass-resources-loader', [
+      '@/assets/scss/main.scss',
+      '@/assets/scss/base.scss',
+      '@/assets/scss/header.scss',
+      '@/assets/scss/index-vue.scss'
+  ]],
+
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
     

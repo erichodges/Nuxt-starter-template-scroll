@@ -175,7 +175,7 @@ nav > ul > li > div ul > li:hover > a {
 
 
 .navigation {
-   
+   cursor: pointer;
 
   &__checkbox {
     display: none;
@@ -208,14 +208,16 @@ nav > ul > li > div ul > li:hover > a {
     &::after { bottom: -.8rem; }
 
   }
+    &__button {
+      cursor: pointer;
+    }
+  // &__button:hover &__icon::before {
+    
+  // }
 
-  &__button:hover &__icon::before {
-    cursor: pointer;
-  }
-
-  &__button:hover &__icon::after {
-    cursor: pointer;
-  }
+  // &__button:hover &__icon::after {
+    
+  // }
 
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;

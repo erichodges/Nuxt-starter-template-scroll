@@ -32,7 +32,14 @@
           <a class="a" href="#" v-scroll-to="'#section-4'">
           Contact</a>
         </li>        
-
+        
+        <li class="navigation">
+          <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+          <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+          </label>
+        </li>
+        
         <li class="nav-spacer-right"> </li>
       </ul>
     </nav>
@@ -53,7 +60,6 @@ nav {
 
 .nav-chevron {
   
-
   &:hover {
     fill: #fff;
   }
@@ -161,6 +167,70 @@ nav > ul > li > div ul > li:hover > a {
   > nav-chevron:hover {
     fill: #fff
   }
+}
+
+//////////////////
+// HAMBURGER
+
+
+
+.navigation {
+   
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__icon {
+    position: relative;
+    
+    margin-top: 1rem;
+    
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+       
+      position: absolute;
+      left: 0;
+      transition: all .3s;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { bottom: -.8rem; }
+
+  }
+
+  &__button:hover &__icon::before {
+    cursor: pointer;
+  }
+
+  &__button:hover &__icon::after {
+    cursor: pointer;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }  
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  } 
+
 }
 
 </style>

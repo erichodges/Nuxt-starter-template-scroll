@@ -177,6 +177,15 @@ nav > ul > li > div ul > li:hover > a {
 .hamburger {
    cursor: pointer;
    padding: 1rem;
+   visibility: hidden;
+   width: 0;
+   height: 0;
+
+   @include respond(tab-port) {
+      visibility: visible;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
 
   &__checkbox {
     display: none;
@@ -190,9 +199,9 @@ nav > ul > li > div ul > li:hover > a {
     &,
     &::before,
     &::after {
-      width: 3rem;
+      width: 2.5rem;
       height: 2px;
-      background-color: $color-grey-dark-3;
+      background-color: #fff;
       display: inline-block;
     }
 

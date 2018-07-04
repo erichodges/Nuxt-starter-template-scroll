@@ -33,10 +33,10 @@
           Contact</a>
         </li>        
         
-        <li class="navigation">
-          <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-          <label for="navi-toggle" class="navigation__button">
-            <span class="navigation__icon">&nbsp;</span>
+        <li class="hamburger">
+          <input type="checkbox" class="hamburger__checkbox" id="navi-toggle">
+          <label for="navi-toggle" class="hamburger__button">
+            <span class="hamburger__icon">&nbsp;</span>
           </label>
         </li>
         
@@ -174,8 +174,9 @@ nav > ul > li > div ul > li:hover > a {
 
 
 
-.navigation {
+.hamburger {
    cursor: pointer;
+   padding: 1rem;
 
   &__checkbox {
     display: none;

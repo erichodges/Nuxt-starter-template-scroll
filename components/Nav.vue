@@ -176,7 +176,7 @@ nav > ul > li > div ul > li:hover > a {
 
 .hamburger {
    cursor: pointer;
-   padding: 1rem;
+   padding: 0rem;
    visibility: hidden;
    width: 0;
    height: 0;
@@ -222,11 +222,11 @@ nav > ul > li > div ul > li:hover > a {
       cursor: pointer;
     }
   // &__button:hover &__icon::before {
-    
+  //   cursor: pointer;
   // }
 
   // &__button:hover &__icon::after {
-    
+  //   cursor: pointer;
   // }
 
   &__checkbox:checked + &__button &__icon {

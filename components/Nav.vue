@@ -6,12 +6,11 @@
           <img src="~/assets/images/sleep-logo.png" alt=" Logo" class="logo">
         </li>
         <li class="li-user-nav">
-          <a class="a" href="#" v-scroll-to="'#section-2'">
-            Products
-            <svg class="nav-chevron" fill="currentColor" height="20" viewBox="0 0 17 17" width="22" xmlns="http://www.w3.org/2000/svg">
+          <a class="a" href="#" v-scroll-to="'#section-2'">PRODUCTS
+            <!-- <svg class="nav-chevron" fill="currentColor" height="12.5" viewBox="0 0 17 17" width="22" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
             <path d="M0-.75h24v24H0z" fill="none"/>
-            </svg>
+            </svg> -->
           </a>
           <div>
             <ul>
@@ -25,12 +24,12 @@
 
         <li class="li-user-nav">
           <a class="a" href="#" v-scroll-to="'#section-3'">
-          About</a>
+          ABOUT</a>
         </li>
 
         <li class="li-user-nav">
           <a class="a" href="#" v-scroll-to="'#section-4'">
-          Contact</a>
+          CONTACT</a>
         </li>        
         
         <li class="hamburger">
@@ -58,6 +57,7 @@ nav {
 
 }
 
+
 .nav-chevron {
   
   &:hover {
@@ -72,6 +72,25 @@ nav ul {
   list-style-type: none;
   transition: all 0.2s;
   
+}
+
+.li-user-nav {
+  font-family: Roboto, sans-serif; 
+  color: rgb(192, 190, 190);
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;  
+  padding: 2rem;
+  text-decoration: none;
+  text-decoration-line: none;
+
+  @include respond(tab-port) {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    
+  }
+ 
 }
 
 nav ul li {
@@ -171,8 +190,6 @@ nav > ul > li > div ul > li:hover > a {
 
 //////////////////
 // HAMBURGER
-
-
 
 .hamburger {
    cursor: pointer;

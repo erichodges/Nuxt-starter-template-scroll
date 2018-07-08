@@ -3,10 +3,10 @@
     <nav>
       <ul class="ul-nav">
         <li class="li-logo">
-          <img src="~/assets/images/sleep-logo.png" alt=" Logo" class="logo">
+          <img src="~/assets/images/bulma-logo.png" alt=" Logo" class="logo">
         </li>
         <li class="li-user-nav">
-          <a class="a" href="#" v-scroll-to="'#section-2'">PRODUCTS
+          <a class="a" href="#" v-scroll-to="'#section-2'">Products
             <!-- <svg class="nav-chevron" fill="currentColor" height="12.5" viewBox="0 0 17 17" width="22" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
             <path d="M0-.75h24v24H0z" fill="none"/>
@@ -24,12 +24,12 @@
 
         <li class="li-user-nav">
           <a class="a" href="#" v-scroll-to="'#section-3'">
-          ABOUT</a>
+          About</a>
         </li>
 
         <li class="li-user-nav">
           <a class="a" href="#" v-scroll-to="'#section-4'">
-          CONTACT</a>
+          Contact</a>
         </li>        
         
         <li class="hamburger">
@@ -85,7 +85,7 @@ nav {
 
 .logo {
   // height: 3.25rem;
-  width: 50%;
+  width: 18%;
   
   margin-left: 2.5rem;  
 }
@@ -115,18 +115,22 @@ nav ul {
   font-family: Roboto, sans-serif; 
   color: rgb(192, 190, 190);
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 600;  
   padding: 2rem;
   text-decoration: none;
   text-decoration-line: none;
 
-  @include respond(tab-port) {
-    visibility: hidden;
-    width: 0;
-    height: 0;
+   @media only screen and (max-width: 56.25em) {
+     visibility: hidden;    
+   }
+
+  // @include respond(tab-port) {
+  //   visibility: hidden;
+    // width: 0;
+    // height: 0;
     
-  }
+  // }
  
 }
 

@@ -53,8 +53,7 @@
 
 nav {
   overflow: hidden;
-  display: block;
-
+  display: block;  
 }
 
 .ul-nav {
@@ -86,12 +85,14 @@ nav {
 .logo {
   // height: 3.25rem;
   width: 18%;
+  height: 18%;
   
   margin-left: 2.5rem;  
 }
 
 .nav-spacer-right {
   padding-right: 4rem;
+  height: 1rem;
 }
 
 
@@ -123,15 +124,7 @@ nav ul {
 
    @media only screen and (max-width: 56.25em) {
      visibility: hidden;    
-   }
-
-  // @include respond(tab-port) {
-  //   visibility: hidden;
-    // width: 0;
-    // height: 0;
-    
-  // }
- 
+   } 
 }
 
 nav ul li {
@@ -239,11 +232,13 @@ nav > ul > li > div ul > li:hover > a {
    width: 0;
    height: 0;
 
-   @include respond(tab-port) {
-      visibility: visible;
-      width: 2.5rem;
-      height: 2.5rem;
-    }
+  
+
+  // @include respond(tab-port) {
+  //     visibility: visible;
+  //     width: 2.5rem;
+  //     height: 2.5rem;
+  //   }
 
   &__checkbox {
     display: none;
@@ -300,6 +295,13 @@ nav > ul > li > div ul > li:hover > a {
     top: 0;
     transform: rotate(-45deg);
   } 
+  
+  @media only screen and (max-width: 900px) { 
+    visibility: visible;
+    width: 2.5rem;
+    height: 2.5rem;
+
+  }
 
 }
 

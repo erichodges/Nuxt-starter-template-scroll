@@ -40,14 +40,14 @@
             </a>
             <a href="javascript:void(0);" class="ic close"></a>
             <ul class="main-nav">
-              <li>yo</li>
-              <li>dude</li>
+              <li class="text">yo dude</li>
+              <li class="text">dude</li>
               
-              <li>yo</li>
-              <li>dude</li>
+              <li class="text">yo</li>
+              <li class="text">dude</li>
               
-              <li>yo</li>
-              <li>dude</li>
+              <li class="text">yo</li>
+              <li class="text">dude</li>
               
             </ul>           
           </li>
@@ -64,7 +64,11 @@
 </script>
 
 <style lang="scss" scoped>
-
+.text {
+  font-size: 2rem;
+  color: #fff;
+  padding-left: 1.5rem;
+}
 nav {
   overflow: hidden;
   display: block;  
@@ -236,7 +240,7 @@ nav > ul > li > div ul > li:hover > a {
   }
 }
 
-
+//////////////////////
 // Nav Hamburger from:
 // https://codepen.io/ahsanrathore/pen/wMRwpZ?editors=1100
 
@@ -327,11 +331,15 @@ nav > ul > li > div ul > li:hover > a {
     overflow: auto;
     /*CSS animation applied : Slide from Right*/
     transition-property: background, width;
-
     transition-duration: 0.6s;
+    height: 100vh;
   }
   
-  .ic.menu:focus ~ .main-nav { width: 300px; background-color:rgba(0,0,0,1); }
+  .ic.menu:focus ~ .main-nav { 
+    width: 300px; background-color:rgba(0,0,0,1);
+    height: 100vh;
+
+  }
   
   ul.main-nav > * { 
     transition-property: opacity;

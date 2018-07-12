@@ -40,6 +40,15 @@
             </a>
             <a href="javascript:void(0);" class="ic close"></a>
             <ul class="main-nav">
+              <li>yo</li>
+              <li>dude</li>
+              
+              <li>yo</li>
+              <li>dude</li>
+              
+              <li>yo</li>
+              <li>dude</li>
+              
             </ul>           
           </li>
           
@@ -255,7 +264,7 @@ nav > ul > li > div ul > li:hover > a {
 }
 
 /* Hamburger*/
-.ic.menu { top: 25px; z-index : 20; }
+.ic.menu { top: 2rem; z-index : 20; }
 
 .ic.menu .line { 
   height: 2px; 

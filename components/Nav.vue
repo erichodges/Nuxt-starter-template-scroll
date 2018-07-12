@@ -26,7 +26,9 @@
 <style lang="scss" scoped>
 
 
-/* Navigation Styles */
+
+// Nav Hamburger from:
+// https://codepen.io/ahsanrathore/pen/wMRwpZ?editors=1100
 
 .ic {
   position: fixed; 

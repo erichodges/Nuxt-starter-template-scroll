@@ -7,12 +7,7 @@
             <img src="~/assets/images/bulma-logo.png" alt=" Logo" class="logo">
           </li>
           <li class="li-user-nav">
-            <a class="a" href="#" v-scroll-to="'#section-2'">Products
-              <!-- <svg class="nav-chevron" fill="currentColor" height="12.5" viewBox="0 0 17 17" width="22" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-              <path d="M0-.75h24v24H0z" fill="none"/>
-              </svg> -->
-            </a>
+            <a class="a" href="#" v-scroll-to="'#section-2'">Products</a>
             <div>
               <ul>
                 <li><a href="#">widget 1</a></li>
@@ -289,7 +284,7 @@ nav > ul > li > div ul > li:hover > a {
   header.light .ic.menu .line { background-color: #000; }
   .ic.menu .line {
     transition: all 0.4s ease 0s;
-    transform: rotate(0deg);
+    // transform: rotate(0deg);
     transform-origin: center center;
   }
   .ic.menu:focus .line { background-color: #fff !important; }
@@ -368,75 +363,84 @@ nav > ul > li > div ul > li:hover > a {
     opacity: 1.0;
   }
   
-  .sub-menu-block { padding: 0 30px; }
-  .banners-area { padding-bottom: 0px;  }
-  .banners-area div { margin-bottom: 15px;  }
-  .banners-area { border-top: 1px solid #444; }
+  // .sub-menu-block { padding: 0 30px; }
+  // .banners-area { padding-bottom: 0px;  }
+  // .banners-area div { margin-bottom: 15px;  }
+  // .banners-area { border-top: 1px solid #444; }
 }
 
 @media only screen and (min-width: 900px) {
-  .ic.menu { display: none; }
-  /* Main Menu for Desktop Devices  */
-  ul.main-nav { display: block; position: relative; }
-  .sub-menu-block { padding: 15px; }
+  .main-nav {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+
+// @media only screen and (min-width: 900px) {
+//   .ic.menu { display: none; }
+//   /* Main Menu for Desktop Devices  */
+//   ul.main-nav { display: block; position: relative; }
+//   .sub-menu-block { padding: 15px; }
   
-  /* Sub Menu */
-  ul.main-nav > li > div.sub-menu-block { 
-  visibility: hidden;
-  background-color: #f9f9f9;
-  position: absolute;
-  margin-top: 0px;
-  width: 100%;
-  color: #333;
-  left: 0;
-  box-sizing: border-box;
-  z-index : 3;
-  font-size: 16px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  opacity: 0;
+//   /* Sub Menu */
+//   ul.main-nav > li > div.sub-menu-block { 
+//   visibility: hidden;
+//   background-color: #f9f9f9;
+//   position: absolute;
+//   margin-top: 0px;
+//   width: 100%;
+//   color: #333;
+//   left: 0;
+//   box-sizing: border-box;
+//   z-index : 3;
+//   font-size: 16px;
+//   border-left: 1px solid #ccc;
+//   border-right: 1px solid #ccc;
+//   border-bottom: 1px solid #ccc;
+//   opacity: 0;
     
-  /*CSS animation applied for sub menu : Slide from Top */
-  transition: all 0.4s ease 0s;
-  transform: rotateX(90deg);
-  transform-origin: top center;
+//   /*CSS animation applied for sub menu : Slide from Top */
+//   transition: all 0.4s ease 0s;
+//   transform: rotateX(90deg);
+//   transform-origin: top center;
   
-  }
+//   }
   
-  ul.main-nav > li:hover > div.sub-menu-block{ 
-    background-color: #f9f9f9; 
-    visibility: visible;
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
+//   ul.main-nav > li:hover > div.sub-menu-block{ 
+//     background-color: #f9f9f9; 
+//     visibility: visible;
+//     opacity: 1;
+//     transform: rotateX(0deg);
+//   }
   
-  ul.main-nav > li > div.sub-menu-block > * {
-    transition-property: opacity;
-    transition-duration: 0.4s;
-    opacity: 0;
-  }
+//   ul.main-nav > li > div.sub-menu-block > * {
+//     transition-property: opacity;
+//     transition-duration: 0.4s;
+//     opacity: 0;
+//   }
   
-  ul.main-nav > li:hover > div.sub-menu-block > * {
-    opacity: 1;
-  }
+//   ul.main-nav > li:hover > div.sub-menu-block > * {
+//     opacity: 1;
+//   }
   
-  .sub-menu-head { font-size: 20px;}
+//   .sub-menu-head { font-size: 20px;}
   
 
   
-  /* List Separator: Inner Border */
-  ul.main-nav > li > a:after {
-    content: '';
-    width: 1px;
-    height: 62px;
-    position: absolute;
-    right:0px;
-    top: 0px;
-    z-index : 2;
-  }
+//   /* List Separator: Inner Border */
+//   ul.main-nav > li > a:after {
+//     content: '';
+//     width: 1px;
+//     height: 62px;
+//     position: absolute;
+//     right:0px;
+//     top: 0px;
+//     z-index : 2;
+//   }
    
-}
+// }
 
 
 // //////////////////

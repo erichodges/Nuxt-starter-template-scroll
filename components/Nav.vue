@@ -28,12 +28,15 @@
             Contact</a>
           </li>  
           <li>
-            <a href="javascript:void(0);" class="ic menu">
+            <a href="#" class="ic menu">
               <span class="line"></span>
               <span class="line"></span>
               <span class="line"></span>
             </a>
-            <a href="javascript:void(0);" class="ic close"></a>
+            <a href="#" class="ic close"></a>
+            
+            <ul class="dimmer"></ul>
+
             <ul class="main-nav">
               <li class="text">yo dude</li>
               <li class="text">dude</li>
@@ -96,9 +99,9 @@ nav {
 }
 
 .logo {
-  // height: 3.25rem;
-  width: 18%;
-  height: 18%;
+  height: 3.25rem;
+  // width: 18%;
+  // height: 18%;
   
   margin-left: 2.5rem;  
 }
@@ -275,14 +278,22 @@ nav > ul > li > div ul > li:hover > a {
 
 @media only screen and (max-width:900px) {
   .sub-menu-head { color:orange; }
-  .ic.menu { display: block; }
+
+  .ic.menu { 
+    display: block;
+    
+  }
+
+  //Controls for Dark/Light theme of Hamburger
   header.dark .ic.menu .line { background-color: #fff; } 
-  header.light .ic.menu .line { background-color: #000; }
+  header.light .line { background-color: #000; }
+
   .ic.menu .line {
-    // transition: 0.4s ease 0s;
-    // transform: rotate(0deg);
+    
+    transition: 0.4s ease 0s;    
     transform-origin: center center;
   }
+
   .ic.menu:focus .line { background-color: #fff !important; }
   
   // Rotate Hamburger
@@ -301,7 +312,13 @@ nav > ul > li > div ul > li:hover > a {
   }
 
   .ic.menu:focus{ outline: none; }
-  .ic.menu:focus ~ .ic.close { opacity: 1; z-index : 21;  outline: none;  }
+  .ic.menu:focus ~ .ic.close { 
+    opacity: 1; 
+    z-index : 21;  
+    outline: none;  
+
+    
+  }
   
   .ic.menu:hover, 
   .ic.menu:focus { opacity: 1; }
@@ -309,9 +326,20 @@ nav > ul > li > div ul > li:hover > a {
 
   nav { background-color: transparent; }
   
- /* Slide Out Menu (Main Menu for Handheld Devices)  */
+  ul.dimmer {
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba($color-black, .6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 4;
+    }
+
+
+ // Slide Out Menu (Main Menu for Handheld Devices)  */
   ul.main-nav {
-    z-index:2; 
+    z-index: 10; 
     padding: 50px 0;
     position: fixed;
     right: 0px;
@@ -320,6 +348,7 @@ nav > ul > li > div ul > li:hover > a {
     background-color:rgba(0,0,0,1);
     height: 100%;
     overflow: auto;
+
     /*CSS animation applied : Slide from Right*/
     transition-property: background, width;
     transition-duration: 0.6s;

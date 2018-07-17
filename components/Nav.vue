@@ -121,7 +121,7 @@ nav ul {
   padding: 0;
 
   list-style-type: none;
-  transition: all 0.2s;
+  // transition: 0.2s;
   
 }
 
@@ -144,11 +144,7 @@ nav ul li {
   display: inline-block;
   list-style-type: none;
   
-  -webkit-transition: all 0.2s;
-   -moz-transition: all 0.2s;
-   -ms-transition: all 0.2s;
-   -o-transition: all 0.2s;
-  transition: all 0.2s; 
+  // transition: all 0.2s; 
  }
 
 nav > ul > li > a > .caret {
@@ -283,7 +279,7 @@ nav > ul > li > div ul > li:hover > a {
   header.dark .ic.menu .line { background-color: #fff; } 
   header.light .ic.menu .line { background-color: #000; }
   .ic.menu .line {
-    transition: all 0.4s ease 0s;
+    // transition: 0.4s ease 0s;
     // transform: rotate(0deg);
     transform-origin: center center;
   }

@@ -35,9 +35,10 @@
             </a>
             <a href="#" class="ic close"></a>
             
-            <ul class="dimmer"></ul>
-
+            
+            <scroll-lock v-bodyLock="true">
             <ul class="main-nav">
+            
               <li class="text">yo dude</li>
               <li class="text">dude</li>
               
@@ -46,8 +47,10 @@
               
               <li class="text">yo</li>
               <li class="text">dude</li>
-              
-            </ul>           
+              <ul class="dimmer"></ul>  
+            </ul> 
+            </scroll-lock>
+            
           </li>
           
           <li class="nav-spacer-right"> </li>
@@ -58,6 +61,21 @@
 </template>
 
 <script>
+    // 1. Import the functions
+  // const bodyScrollLock = require('body-scroll-lock');
+  // const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+  // const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+    
+  // // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav). 
+  // const targetElement = document.querySelector("#main");
+    
+    
+  // // 3. ...in some event handler after showing the target element...disable body scroll
+  // disableBodyScroll(targetElement);
+  
+  
+  // // 4. ...in some event handler after hiding the target element...
+  // enableBodyScroll(targetElement);
 
 </script>
 
@@ -277,8 +295,8 @@ nav > ul > li > div ul > li:hover > a {
 
 
 @media only screen and (max-width:900px) {
+  
   .sub-menu-head { color:orange; }
-
   .ic.menu { 
     display: block;
     
@@ -315,9 +333,7 @@ nav > ul > li > div ul > li:hover > a {
   .ic.menu:focus ~ .ic.close { 
     opacity: 1; 
     z-index : 21;  
-    outline: none;  
-
-    
+    outline: none;      
   }
   
   .ic.menu:hover, 
@@ -333,26 +349,27 @@ nav > ul > li > div ul > li:hover > a {
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 4;
+      z-index: -100;
     }
 
 
  // Slide Out Menu (Main Menu for Handheld Devices)  */
   ul.main-nav {
-    z-index: 10; 
+    
+    background-color:rgba(0,0,0,1);
+    height: 100vh;    
     padding: 50px 0;
     position: fixed;
     right: 0px;
     top: 0px;
-    width: 0px;
-    background-color:rgba(0,0,0,1);
-    height: 100%;
+    width: 0px;    
+    // height: 100%;
     overflow: auto;
 
     /*CSS animation applied : Slide from Right*/
     transition-property: background, width;
     transition-duration: 0.6s;
-    height: 100vh;
+    z-index: 10; 
   }
   
   .ic.menu:focus ~ .main-nav { 

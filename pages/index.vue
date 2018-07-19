@@ -1,5 +1,5 @@
 <template>
-  <main>    
+  <main id="main">    
     <section class="section-1">    
 
       <div class="section-1__heading">           

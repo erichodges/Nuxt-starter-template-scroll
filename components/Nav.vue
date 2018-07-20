@@ -28,14 +28,16 @@
             Contact</a>
           </li>  
           <li>
-            <a href="#" class="ic menu">
+            <a href="#" @click="toggle" class="ic menu">
               <span class="line"></span>
               <span class="line"></span>
               <span class="line"></span>
             </a>
             <a href="#" class="ic close"></a>
             
-            
+            <!-- <script type="x-template" id="sidenav">
+            <nav class="sidenav"></nav>
+            </script> -->
             
             <!-- <ul class="main-nav">
             
@@ -61,11 +63,59 @@
 </template>
 
 <script>
- 
+  export default {
+    data() {
+      return {
+        sideNavOpen: false
+      }
+    }
+  }
+  
 
 </script>
 
 <style lang="scss" scoped>
+
+.lock {
+  overflow: hidden;
+}
+
+.page-wrap {
+  height: 100vh;
+}
+
+.page {
+  height: 2000px;
+  
+  &:first-of-type {
+    background: blue;
+  }
+  
+  &:nth-of-type(2) {
+    background: red;
+  }
+  
+  &:nth-of-type(3) {
+    background: green;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: black;
+  width: 200px;
+  z-index: 10;
+}
+button {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+
 .text {
   font-size: 2rem;
   color: #fff;
@@ -104,9 +154,7 @@ nav {
 
 .logo {
   height: 3.25rem;
-  // width: 18%;
-  // height: 18%;
-  
+
   margin-left: 2.5rem;  
 }
 
@@ -276,13 +324,13 @@ nav > ul > li > div ul > li:hover > a {
 }
 .ic.menu .line-last-child { margin-bottom: 0px;  }
 
-.sub-menu-head { margin: 10px 0; }
-.banners-area { margin-top: 20px; padding-top: 15px; }
+// .sub-menu-head { margin: 10px 0; }
+// .banners-area { margin-top: 20px; padding-top: 15px; }
 
 
 @media only screen and (max-width:900px) {
   
-  .sub-menu-head { color:orange; }
+  // .sub-menu-head { color:orange; }
   .ic.menu { 
     display: block;
     
@@ -336,207 +384,8 @@ nav > ul > li > div ul > li:hover > a {
       top: 0;
       left: 0;
       z-index: -100;
-    }
-
-
- // Slide Out Menu (Main Menu for Handheld Devices)  */
-  ul.main-nav {
-    
-    background-color:rgba(0,0,0,1);
-    height: 100vh;    
-    padding: 50px 0;
-    position: fixed;
-    right: 0px;
-    top: 0px;
-    width: 0px;    
-    // height: 100%;
-    overflow: hidden;
-
-    /*CSS animation applied : Slide from Right*/
-    transition-property: background, width;
-    transition-duration: 0.6s;
-    z-index: 10; 
-  }
-  
-  .ic.menu:focus ~ .main-nav { 
-    width: 300px; background-color:rgba(0,0,0,1);
-    height: 100vh;
-
-  }
-  
-  ul.main-nav > * { 
-    transition-property: opacity;
-    transition-duration: 0.4s;
-    opacity: 0;
-  }
-  .ic.menu:focus ~ .main-nav > * {opacity: 1;}
-  
-  ul.main-nav > li > a:after {display: none;}
-  ul.main-nav > li:first-child { border-radius: 0px; }
-  ul.main-nav > li {
-    display: block;
-    border-bottom: 1px solid #444;
-  }
-  
-  ul.main-nav > li ul.sub-menu-lists > li a { color: #eee; font-size: 14px; }
-  .sub-menu-head { font-size: 16px;}
-  ul.main-nav > li:hover { background-color: transparent;  }
-  ul.main-nav > li:hover > a {color: #fff; text-decoration: none; font-weight: 600;}
- .ic.menu:focus ~ ul.main-nav > li > div.sub-menu-block {
-    border-left: 0px solid #ccc;
-    border-right: 0px solid #ccc;
-    border-bottom: 0px solid #ccc;
-    position: relative;
-    visibility: visible;
-    opacity: 1.0;
-  }
-  
-  // .sub-menu-block { padding: 0 30px; }
-  // .banners-area { padding-bottom: 0px;  }
-  // .banners-area div { margin-bottom: 15px;  }
-  // .banners-area { border-top: 1px solid #444; }
+   }
 }
 
-@media only screen and (min-width: 900px) {
-  .main-nav {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-}
-
-
-// @media only screen and (min-width: 900px) {
-//   .ic.menu { display: none; }
-//   /* Main Menu for Desktop Devices  */
-//   ul.main-nav { display: block; position: relative; }
-//   .sub-menu-block { padding: 15px; }
-  
-//   /* Sub Menu */
-//   ul.main-nav > li > div.sub-menu-block { 
-//   visibility: hidden;
-//   background-color: #f9f9f9;
-//   position: absolute;
-//   margin-top: 0px;
-//   width: 100%;
-//   color: #333;
-//   left: 0;
-//   box-sizing: border-box;
-//   z-index : 3;
-//   font-size: 16px;
-//   border-left: 1px solid #ccc;
-//   border-right: 1px solid #ccc;
-//   border-bottom: 1px solid #ccc;
-//   opacity: 0;
-    
-//   /*CSS animation applied for sub menu : Slide from Top */
-//   transition: all 0.4s ease 0s;
-//   transform: rotateX(90deg);
-//   transform-origin: top center;
-  
-//   }
-  
-//   ul.main-nav > li:hover > div.sub-menu-block{ 
-//     background-color: #f9f9f9; 
-//     visibility: visible;
-//     opacity: 1;
-//     transform: rotateX(0deg);
-//   }
-  
-//   ul.main-nav > li > div.sub-menu-block > * {
-//     transition-property: opacity;
-//     transition-duration: 0.4s;
-//     opacity: 0;
-//   }
-  
-//   ul.main-nav > li:hover > div.sub-menu-block > * {
-//     opacity: 1;
-//   }
-  
-//   .sub-menu-head { font-size: 20px;}
-  
-
-  
-//   /* List Separator: Inner Border */
-//   ul.main-nav > li > a:after {
-//     content: '';
-//     width: 1px;
-//     height: 62px;
-//     position: absolute;
-//     right:0px;
-//     top: 0px;
-//     z-index : 2;
-//   }
-   
-// }
-
-
-// //////////////////
-// // OLD HAMBURGER
-
-// .hamburger {
-//    cursor: pointer;
-//    padding: 0rem;
-//    visibility: hidden;
-//    width: 0;
-//    height: 0;
-
-//   &__checkbox {
-//     display: none;
-//   }
-
-//   &__icon {
-//     position: relative;
-    
-//     margin-top: 1rem;
-    
-//     &,
-//     &::before,
-//     &::after {
-//       width: 2.5rem;
-//       height: 2px;
-//       background-color: #fff;
-//       display: inline-block;
-//     }
-
-//     &::before,
-//     &::after {
-//       content: "";
-       
-//       position: absolute;
-//       left: 0;
-//       transition: all .3s;
-//     }
-
-//     &::before { top: -.8rem; }
-//     &::after { bottom: -.8rem; }
-
-//   }
-//     &__button {
-//       cursor: pointer;
-//     }
-
-//   &__checkbox:checked + &__button &__icon {
-//     background-color: transparent;
-//   }
-
-//   &__checkbox:checked + &__button &__icon::before {
-//     top: 0;
-//     transform: rotate(45deg);
-//   }  
-
-//   &__checkbox:checked + &__button &__icon::after {
-//     top: 0;
-//     transform: rotate(-45deg);
-//   } 
-  
-//   @media only screen and (max-width: 900px) { 
-//     visibility: visible;
-//     width: 2.5rem;
-//     height: 2.5rem;
-
-//   }
-
-// }
 
 </style>

@@ -36,8 +36,8 @@
             <a href="#" class="ic close"></a>
             
             
-            <scroll-lock v-bodyLock="true">
-            <ul class="main-nav">
+            
+            <!-- <ul class="main-nav">
             
               <li class="text">yo dude</li>
               <li class="text">dude</li>
@@ -48,8 +48,8 @@
               <li class="text">yo</li>
               <li class="text">dude</li>
               <ul class="dimmer"></ul>  
-            </ul> 
-            </scroll-lock>
+            </ul>  -->
+            
             
           </li>
           
@@ -61,21 +61,7 @@
 </template>
 
 <script>
-    // 1. Import the functions
-  // const bodyScrollLock = require('body-scroll-lock');
-  // const disableBodyScroll = bodyScrollLock.disableBodyScroll;
-  // const enableBodyScroll = bodyScrollLock.enableBodyScroll;
-    
-  // // 2. Get a target element that you want to persist scrolling for (such as a modal/lightbox/flyout/nav). 
-  // const targetElement = document.querySelector("#main");
-    
-    
-  // // 3. ...in some event handler after showing the target element...disable body scroll
-  // disableBodyScroll(targetElement);
-  
-  
-  // // 4. ...in some event handler after hiding the target element...
-  // enableBodyScroll(targetElement);
+ 
 
 </script>
 
@@ -364,7 +350,7 @@ nav > ul > li > div ul > li:hover > a {
     top: 0px;
     width: 0px;    
     // height: 100%;
-    overflow: auto;
+    overflow: hidden;
 
     /*CSS animation applied : Slide from Right*/
     transition-property: background, width;

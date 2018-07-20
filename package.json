@@ -23,7 +23,6 @@
     "nuxt": "^1.4.1",
     "nuxt-sass-resources-loader": "^2.0.2",
     "vue-headroom": "^0.8.1",
-    "vue-scroll-lock": "0.0.3",
     "vue-scrollto": "^2.11.0",
     "vue-style-loader": "^4.1.0"
   },

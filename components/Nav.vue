@@ -28,18 +28,18 @@
             Contact</a>
           </li>  
           <li>
-            <a href="#" @click="toggle" class="ic menu">
+            <a href="#" @click="show = !show" class="ic menu">
               <span class="line"></span>
               <span class="line"></span>
               <span class="line"></span>
             </a>
-            <a href="#" class="ic close"></a>
+            <a href="#" @click="show = !show"></a>
             
             <!-- <script type="x-template" id="sidenav">
             <nav class="sidenav"></nav>
             </script> -->
-            
-            <!-- <ul class="main-nav">
+            <div class="ham_menu">
+            <ul class="main-nav" v-if="show">
             
               <li class="text">yo dude</li>
               <li class="text">dude</li>
@@ -50,8 +50,8 @@
               <li class="text">yo</li>
               <li class="text">dude</li>
               <ul class="dimmer"></ul>  
-            </ul>  -->
-            
+            </ul> 
+            </div>
             
           </li>
           
@@ -66,7 +66,7 @@
   export default {
     data() {
       return {
-        sideNavOpen: false
+        show: false
       }
     }
   }
@@ -370,8 +370,8 @@ nav > ul > li > div ul > li:hover > a {
     outline: none;      
   }
   
-  .ic.menu:hover, 
-  .ic.menu:focus { opacity: 1; }
+  // .ic.menu:hover, 
+  // .ic.menu:focus { opacity: 1; }
   
 
   nav { background-color: transparent; }
@@ -387,5 +387,14 @@ nav > ul > li > div ul > li:hover > a {
    }
 }
 
+.ham_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 40rem;
+  background: black;
+  width: 30rem;
+  z-index: 10;
+}
 
 </style>

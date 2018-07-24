@@ -1,4 +1,5 @@
 <template>
+
   <vue-headroom>
     <header class="dark">
       <nav role="navigation">
@@ -27,19 +28,21 @@
             <a class="a" href="#" v-scroll-to="'#section-4'">
             Contact</a>
           </li>  
+          
+          
+          
           <li>
-            <a href="#" @click="show = !show" class="ic menu">
+            <!-- <button class="btn" @click="show = !show">Toggle</button> -->
+
+            <a href="#"  class="ic menu" @click="show = !show">
               <span class="line"></span>
               <span class="line"></span>
               <span class="line"></span>
             </a>
-            <a href="#" @click="show = !show"></a>
-            
-            <!-- <script type="x-template" id="sidenav">
-            <nav class="sidenav"></nav>
-            </script> -->
-            <div class="ham_menu">
-            <ul class="main-nav" v-if="show">
+            <a href="#" class="ic close" @click="show = !show" ></a>            
+
+            <!-- <div class="sidenav" v-if="show">
+            <ul class="main-nav">
             
               <li class="text">yo dude</li>
               <li class="text">dude</li>
@@ -50,16 +53,20 @@
               <li class="text">yo</li>
               <li class="text">dude</li>
               <ul class="dimmer"></ul>  
-            </ul> 
-            </div>
+            </ul>             
+            </div> -->
+
             
+            
+     
           </li>
-          
+          <div class="alert" v-if="show"></div>
           <li class="nav-spacer-right"> </li>
         </ul>
       </nav>
     </header>
   </vue-headroom>
+  
 </template>
 
 <script>
@@ -75,6 +82,20 @@
 </script>
 
 <style lang="scss" scoped>
+
+.btn {
+  background-color: green;
+  cursor: pointer;
+}
+.alert {  
+  position: fixed;  
+  top: 0px;
+  right: 0;
+  height: 40rem;
+  background: black;
+  width: 20rem;
+  z-index: 0;
+}
 
 .lock {
   overflow: hidden;
@@ -100,15 +121,8 @@
   }
 }
 
-.sidenav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background: black;
-  width: 200px;
-  z-index: 10;
-}
+
+
 button {
   position: fixed;
   top: 16px;
@@ -164,12 +178,12 @@ nav {
 }
 
 
-.nav-chevron {
+// .nav-chevron {
   
-  &:hover {
-    fill: #fff;
-  }
-}
+//   &:hover {
+//     fill: #fff;
+//   }
+// }
 
 nav ul {
   margin: 0;
@@ -199,24 +213,8 @@ nav ul li {
   display: inline-block;
   list-style-type: none;
   
-  // transition: all 0.2s; 
  }
 
-nav > ul > li > a > .caret {
-  border-top: 4px solid $color-grey-light-1;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  content: "";
-  display: inline-block;
-  height: 0;
-  width: 0;
-  vertical-align: middle;
-
-  -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
-  -o-transition: color 0.1s linear;
-    transition: color 0.1s linear; 
-}
 
 nav > ul > li > a {
     text-decoration: none;
@@ -226,13 +224,9 @@ nav > ul > li:hover {
   background-color: transparent;
 }
 
-nav > ul > li:hover > a {
-  color: rgb( 255, 255, 255 );
-}
-
-nav > ul > li:hover > a > .caret {
-  border-top-color: rgb( 255, 255, 255 );
-}
+// nav > ul > li:hover > a {
+//   color: rgb( 255, 255, 255 );
+// }
 
 nav > ul > li > div {
   background-color: transparent;
@@ -250,13 +244,14 @@ nav > ul > li > div {
   padding-top: 1rem;
 }
 
- nav > ul > li:hover > div {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+//This was causing the sidenav to show on hover
+//  nav > ul > li:hover > div {
+//   display: block;
+//   opacity: 1;
+//   visibility: visible;
 
   
-}
+// }
 
 nav > ul > li > div ul > li {
   display: block;
@@ -279,11 +274,7 @@ nav > ul > li > div ul > li:hover > a {
 }
 
 .a {
-  color: $color-grey-light-1;
-
-  > nav-chevron:hover {
-    fill: #fff
-  }
+  color: $color-grey-light-1; 
 }
 
 //////////////////////
@@ -387,14 +378,14 @@ nav > ul > li > div ul > li:hover > a {
    }
 }
 
-.ham_menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 40rem;
-  background: black;
-  width: 30rem;
-  z-index: 10;
-}
+// .ham_menu {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   height: 40rem;
+//   background: black;
+//   width: 30rem;
+//   z-index: 10;
+// }
 
 </style>

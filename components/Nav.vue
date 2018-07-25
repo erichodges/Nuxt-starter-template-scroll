@@ -32,16 +32,15 @@
           
           
           <li>
-            <!-- <button class="btn" @click="show = !show">Toggle</button> -->
+            <!-- <input type="checkbox" id="ham-checkbox" @click="show = !show">            -->
+            <input type="checkbox" id="ham-checkbox" @click="toggle">
+              <label for="ham-checkbox" class="ic menu burger">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+              </label>
 
-            <a href="#"  class="ic menu" @click="show = !show">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </a>
-            <a href="#" class="ic close" @click="show = !show" ></a>            
-
-            <!-- <div class="sidenav" v-if="show">
+            <!-- <div v-if="sideNavOpen">
             <ul class="main-nav">
             
               <li class="text">yo dude</li>
@@ -56,11 +55,17 @@
             </ul>             
             </div> -->
 
-            
-            
-     
           </li>
-          <div class="alert" v-if="show"></div>
+          <transition name="sidenav-fade">
+            <div class="sidenav" v-if="sideNavOpen">
+              <ul>
+                <li class="sidenav-li">
+                  Products
+                </li>
+              </ul>
+            </div>
+          </transition>
+
           <li class="nav-spacer-right"> </li>
         </ul>
       </nav>
@@ -73,7 +78,13 @@
   export default {
     data() {
       return {
-        show: false
+        sideNavOpen: false
+      }
+    },
+
+    methods: {
+      toggle () {
+        this.sideNavOpen = !this.sideNavOpen;
       }
     }
   }
@@ -82,19 +93,56 @@
 </script>
 
 <style lang="scss" scoped>
-
-.btn {
-  background-color: green;
-  cursor: pointer;
+.sidenav-li {
+  color: #fff;
 }
-.alert {  
+
+#ham-checkbox {
+  cursor: pointer;
+  display: none;
+  visibility: hidden;
+}
+
+#ham-checkbox:checked ~ .burger .line-1 {
+  transform: rotate(45deg); 
+  margin-top: 6px;
+}
+
+#ham-checkbox:checked ~ .burger .line-2 {
+  opacity: 0;
+}
+
+#ham-checkbox:checked ~ .burger .line-3 {
+  transform: rotate(-45deg); 
+  margin-top: -16px;
+}
+
+
+.burger {
+  z-index: 20;
+}
+
+.sidenav {  
   position: fixed;  
   top: 0px;
-  right: 0;
-  height: 40rem;
+  right: 1rem;
+  height: 50rem;
   background: black;
-  width: 20rem;
-  z-index: 0;
+  width: 30rem;
+  z-index: -10;
+}
+
+.sidenav-fade-enter {
+  opacity: 0;
+}
+
+.sidenav-fade-enter-active {
+  transition: opacity .4s;
+}
+
+.sidenav-fade-leave-active {
+  transition: opacity .4s;
+  opacity: 0;
 }
 
 .lock {

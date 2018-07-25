@@ -1,5 +1,5 @@
 <template>
-  <main id="main">    
+  <main id="main" :class="{clip: sideNavOpen}">    
     <section class="section-1">    
 
       <div class="section-1__heading">           
@@ -76,6 +76,11 @@
         }
         
       }).catch(console.error)
+    },
+    data() {
+      return {
+        sideNavOpen: false
+      }
     }
   }
 
@@ -94,4 +99,9 @@
   
 </script>
 
+<style>
+  .clip {
+  overflow: hidden;
+}
+</style>
 

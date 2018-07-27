@@ -33,7 +33,7 @@
           
           <li>
             <!-- <input type="checkbox" id="ham-checkbox" @click="show = !show">            -->
-            <input type="checkbox" id="ham-checkbox" @click="toggle">
+            <input type="checkbox" id="ham-checkbox" @click="this.$store.commit('sidebar/toggle')">
               <label for="ham-checkbox" class="ic menu burger">
                 <span class="line line-1"></span>
                 <span class="line line-2"></span>
@@ -57,7 +57,7 @@
 
           </li>
           <transition name="sidenav-fade">
-            <div class="sidenav" v-if="sideNavOpen">
+            <div class="sidenav" v-if="this.$store.state.sidebar.opened">
               <ul>
                 <li class="sidenav-li">
                   Products
@@ -75,19 +75,19 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        sideNavOpen: false
-      }
-    },
+  // export default {
+  //   data() {
+  //     return {
+  //       sideNavOpen: false
+  //     }
+  //   },
 
-    methods: {
-      toggle () {
-        this.sideNavOpen = !this.sideNavOpen;
-      }
-    }
-  }
+  //   methods: {
+  //     toggle () {
+  //       this.sideNavOpen = !this.sideNavOpen;
+  //     }
+  //   }
+  // }
   
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <main id="main" :class="{clip: sideNavOpen}">    
+  <main id="main" :class="{clip: this.$store.state.sidebar.opened}">    
     <section class="section-1">    
 
       <div class="section-1__heading">           
@@ -55,6 +55,7 @@
 <script>
 
   import {createClient} from '~/plugins/contentful.js'
+  
 
   const client = createClient()
 
@@ -76,11 +77,6 @@
         }
         
       }).catch(console.error)
-    },
-    data() {
-      return {
-        sideNavOpen: false
-      }
     }
   }
 

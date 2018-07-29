@@ -1,5 +1,5 @@
 <template>
-  <main id="main" :class="{clip: this.$store.state.sidebar.opened}">    
+  <main id="main" :class="{'clip': $store.state.sidebar.opened}">    
     <section class="section-1">    
 
       <div class="section-1__heading">           
@@ -95,7 +95,8 @@
   
 </script>
 
-<style>
+<style scoped>
+
   .clip {
   overflow: hidden;
 }

@@ -41,7 +41,8 @@ module.exports = {
     {src: '~/plugins/axios.js'},
     {src: '~/plugins/contentful.js'},  //????
     {src: '~/plugins/headroom.js'},    
-    {src: '~/plugins/vue-scrollto.js'}
+    {src: '~/plugins/vue-scrollto.js'},
+    {src: '~/plugins/pp-scroll.js', ssr: false}
     
   ],
 

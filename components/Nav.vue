@@ -57,7 +57,7 @@
 
           </li>
           <transition name="sidenav-fade">
-            <div class="sidenav" v-if="$store.state.sidebar.opened">
+            <div id="scrollable-child" class="sidenav" v-prevent-parent-scroll v-if="$store.state.sidebar.opened">
               <ul>
                 <li class="sidenav-li">
                   Products

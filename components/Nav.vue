@@ -56,43 +56,34 @@
             </div> -->
 
           </li>
-          <transition name="sidenav-fade">
-            <div id="scrollable-child" class="sidenav" v-prevent-parent-scroll v-if="$store.state.sidebar.opened">
-              <ul>
-                <li class="sidenav-li">
-                  Products
-                </li>
-              </ul>
-            </div>
-          </transition>
+          
 
           <li class="nav-spacer-right"> </li>
-        </ul>
+        </ul>       
       </nav>
+      <transition name="sidenav-fade">
+        <div id="scrollable-child" class="sidenav" v-prevent-parent-scroll v-if="$store.state.sidebar.opened">
+          <ul>
+            <li class="sidenav-li">
+              Products
+            </li>
+          </ul>
+        </div>
+      </transition>
+
     </header>
   </vue-headroom>
   
 </template>
 
-<script>
-  // export default {
-  //   data() {
-  //     return {
-  //       sideNavOpen: false
-  //     }
-  //   },
 
-  //   methods: {
-  //     toggle () {
-  //       this.sideNavOpen = !this.sideNavOpen;
-  //     }
-  //   }
-  // }
-  
+<script>
 
 </script>
 
+
 <style lang="scss" scoped>
+
 .sidenav-li {
   color: #fff;
 }
@@ -145,44 +136,13 @@
   opacity: 0;
 }
 
-.lock {
-  overflow: hidden;
-}
-
-.page-wrap {
-  height: 100vh;
-}
-
-.page {
-  height: 2000px;
-  
-  &:first-of-type {
-    background: blue;
-  }
-  
-  &:nth-of-type(2) {
-    background: red;
-  }
-  
-  &:nth-of-type(3) {
-    background: green;
-  }
-}
-
-
-
-button {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-}
-
 
 .text {
   font-size: 2rem;
   color: #fff;
   padding-left: 1.5rem;
 }
+
 nav {
   overflow: hidden;
   display: block;  
@@ -209,14 +169,12 @@ nav {
 
 .logo-box {
   display: flex;
-  // justify-content: flex-start;
   align-items: center;
 
 }
 
 .logo {
   height: 3.25rem;
-
   margin-left: 2.5rem;  
 }
 
@@ -226,20 +184,10 @@ nav {
 }
 
 
-// .nav-chevron {
-  
-//   &:hover {
-//     fill: #fff;
-//   }
-// }
-
 nav ul {
   margin: 0;
   padding: 0;
-
-  list-style-type: none;
-  // transition: 0.2s;
-  
+  list-style-type: none;    
 }
 
 .li-user-nav {
@@ -259,22 +207,18 @@ nav ul {
 
 nav ul li {
   display: inline-block;
-  list-style-type: none;
-  
- }
+  list-style-type: none;  
+}
 
 
 nav > ul > li > a {
     text-decoration: none;
-  }
+}
 
 nav > ul > li:hover {
   background-color: transparent;
 }
 
-// nav > ul > li:hover > a {
-//   color: rgb( 255, 255, 255 );
-// }
 
 nav > ul > li > div {
   background-color: transparent;
@@ -288,18 +232,9 @@ nav > ul > li > div {
   width: 165px;
   visibility: hidden;
   transition: opacity 0.2s;
-
   padding-top: 1rem;
 }
 
-//This was causing the sidenav to show on hover
-//  nav > ul > li:hover > div {
-//   display: block;
-//   opacity: 1;
-//   visibility: visible;
-
-  
-// }
 
 nav > ul > li > div ul > li {
   display: block;
@@ -310,11 +245,8 @@ nav > ul > li > div ul > li {
 
 nav > ul > li > div ul > li > a {
   color: $color-grey-light-1;
-  display: block;
-  
-  text-decoration: none;
-
-  
+  display: block;  
+  text-decoration: none;  
 }
 
 nav > ul > li > div ul > li:hover > a {
@@ -363,10 +295,6 @@ nav > ul > li > div ul > li:hover > a {
 }
 .ic.menu .line-last-child { margin-bottom: 0px;  }
 
-// .sub-menu-head { margin: 10px 0; }
-// .banners-area { margin-top: 20px; padding-top: 15px; }
-
-
 @media only screen and (max-width:900px) {
   
   // .sub-menu-head { color:orange; }
@@ -408,10 +336,6 @@ nav > ul > li > div ul > li:hover > a {
     z-index : 21;  
     outline: none;      
   }
-  
-  // .ic.menu:hover, 
-  // .ic.menu:focus { opacity: 1; }
-  
 
   nav { background-color: transparent; }
   
@@ -426,14 +350,5 @@ nav > ul > li > div ul > li:hover > a {
    }
 }
 
-// .ham_menu {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   height: 40rem;
-//   background: black;
-//   width: 30rem;
-//   z-index: 10;
-// }
 
 </style>

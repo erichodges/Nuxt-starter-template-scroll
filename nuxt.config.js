@@ -38,11 +38,11 @@ module.exports = {
   ],
 
   plugins: [ 
-    {src: '~/plugins/axios.js'},
-    {src: '~/plugins/contentful.js'},  //????
-    {src: '~/plugins/headroom.js'},    
-    {src: '~/plugins/vue-scrollto.js'},
-    {src: '~/plugins/pp-scroll.js', ssr: false}
+    {src: '~/plugins/axios'},
+    {src: '~/plugins/contentful'},
+    {src: '~/plugins/headroom'},    
+    {src: '~/plugins/vue-scrollto'},
+    {src: '~/plugins/pp-scroll', ssr: false}
     
   ],
 

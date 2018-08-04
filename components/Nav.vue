@@ -56,20 +56,20 @@
             </div> -->
 
           </li>
-          
+           <transition name="sidenav-fade">
+              <div id="scrollable-child" class="sidenav" v-prevent-parent-scroll v-if="$store.state.sidebar.opened">
+                <ul>
+                  <li class="sidenav-li">
+                    Products
+                  </li>
+                </ul>
+              </div>
+            </transition>
 
           <li class="nav-spacer-right"> </li>
         </ul>       
       </nav>
-      <transition name="sidenav-fade">
-        <div id="scrollable-child" class="sidenav" v-prevent-parent-scroll v-if="$store.state.sidebar.opened">
-          <ul>
-            <li class="sidenav-li">
-              Products
-            </li>
-          </ul>
-        </div>
-      </transition>
+     
 
     </header>
   </vue-headroom>
